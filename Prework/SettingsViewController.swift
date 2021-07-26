@@ -36,9 +36,9 @@ class SettingsViewController: UIViewController {
         let tipThreePercentage = defaults.double(forKey: "tipThreePercentage")
         
         // Update tip labels
-        lowTipLabel.text = String(format: "%.0f%", tipOnePercentage) + "%"
-        mediumTipLabel.text = String(format: "%.0f%", tipTwoPercentage) + "%"
-        highTipLabel.text = String(format: "%.0f%", tipThreePercentage) + "%"
+        lowTipLabel.text = String(format: "%.0f", tipOnePercentage) + "%"
+        mediumTipLabel.text = String(format: "%.0f", tipTwoPercentage) + "%"
+        highTipLabel.text = String(format: "%.0f", tipThreePercentage) + "%"
         
         // Update tip stepper values with those from user defaults
         lowTipStepper.value = tipOnePercentage == 0 ? tipPercentages[0] : tipOnePercentage

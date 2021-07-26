@@ -32,7 +32,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The main challenge I faced was familiarizing myself the Swift programming language and how Xcode functions in general. I initially had isssues with renaming UI class variable since they would become disconnected from the view controller after having their name changed in the code.  After a few hours of messing around on my own, I now feel comfortable working with the basics of Xcode.
 
 ## License
 

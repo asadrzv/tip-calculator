@@ -118,15 +118,13 @@ class ViewController: UIViewController {
         let tipThreePercentage = defaults.double(forKey: "tipThreePercentage")
         let tipList = [tipOnePercentage, tipTwoPercentage, tipThreePercentage]
         
-        // Set tip control display values
         for i in 0...2 {
+            // Set tip control display values
             tipControl.setTitle(String(format: "%.0f", tipList[i]) + "%", forSegmentAt: i)
+            
+            // Update tip percentages with those in user defaults
+            tipPercentages[i] = tipList[i] / 100.0
         }
-        
-        // Update tip percentages with those in user defaults
-        tipPercentages[0] = tipOnePercentage / 100.0
-        tipPercentages[1] = tipTwoPercentage / 100.0
-        tipPercentages[2] = tipThreePercentage / 100.0
     }
     
     /*

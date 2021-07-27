@@ -89,6 +89,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="updateBillAmount:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="IYC-V9-vJM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKi-DW-GiA">
                                 <rect key="frame" x="202" y="400" width="56" height="21"/>
@@ -137,82 +140,127 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQY-7h-Wc6">
-                                <rect key="frame" x="30" y="120" width="100" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Default Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQY-7h-Wc6">
+                                <rect key="frame" x="30" y="119.66666666666669" width="100" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIA-UV-eti">
-                                <rect key="frame" x="30" y="180" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medium Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sas-ll-C60">
-                                <rect key="frame" x="30" y="250" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPn-Xj-mbl">
-                                <rect key="frame" x="30" y="320" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ukc-Ad-vos" userLabel="Tip One Stepper">
-                                <rect key="frame" x="266" y="173" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="updateLowTipPercentage:" destination="xNv-5W-uRX" eventType="valueChanged" id="UfP-Ng-CuL"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FaW-nh-bmi" userLabel="Tip Two Stepper">
-                                <rect key="frame" x="266" y="243" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="updateMediumTipPercentage:" destination="xNv-5W-uRX" eventType="valueChanged" id="VMd-Jh-nxH"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cx9-Tw-fly" userLabel="Tip Three Stepper">
-                                <rect key="frame" x="266" y="313" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="updateHighTipPercentage:" destination="xNv-5W-uRX" eventType="valueChanged" id="hwf-r8-qdj"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPY-cJ-lHx">
-                                <rect key="frame" x="180" y="180" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9L-5K-vt9">
-                                <rect key="frame" x="180" y="250" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-Jr-wOo">
-                                <rect key="frame" x="180" y="320" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-in-ksK">
+                                <rect key="frame" x="30" y="180" width="89.666666666666686" height="181"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Low Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIA-UV-eti">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Medium Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sas-ll-C60">
+                                        <rect key="frame" x="0.0" y="80.333333333333314" width="89.666666666666671" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="High Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPn-Xj-mbl">
+                                        <rect key="frame" x="0.0" y="160.66666666666669" width="89.666666666666671" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hyP-UK-VQN">
+                                <rect key="frame" x="187" y="180" width="35.666666666666657" height="181"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPY-cJ-lHx">
+                                        <rect key="frame" x="0.0" y="0.0" width="35.666666666666664" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="18%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9L-5K-vt9">
+                                        <rect key="frame" x="0.0" y="80.333333333333314" width="35.666666666666664" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-Jr-wOo">
+                                        <rect key="frame" x="0.0" y="160.66666666666669" width="35.666666666666664" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="175" translatesAutoresizingMaskIntoConstraints="NO" id="Z2O-hC-MB0">
+                                <rect key="frame" x="30" y="407" width="307.66666666666669" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RV-CX-6qG">
+                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVt-b5-dca" userLabel="Dark Mode Switch">
+                                        <rect key="frame" x="258.66666666666669" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="updateDarkMode:" destination="xNv-5W-uRX" eventType="valueChanged" id="qaY-QP-XV6"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZIq-iD-jub">
+                                <rect key="frame" x="267" y="172" width="94" height="196"/>
+                                <subviews>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ukc-Ad-vos" userLabel="Tip One Stepper">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="updateLowTipPercentage:" destination="xNv-5W-uRX" eventType="valueChanged" id="UfP-Ng-CuL"/>
+                                        </connections>
+                                    </stepper>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FaW-nh-bmi" userLabel="Tip Two Stepper">
+                                        <rect key="frame" x="0.0" y="82" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="updateMediumTipPercentage:" destination="xNv-5W-uRX" eventType="valueChanged" id="VMd-Jh-nxH"/>
+                                        </connections>
+                                    </stepper>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cx9-Tw-fly" userLabel="Tip Three Stepper">
+                                        <rect key="frame" x="0.0" y="164" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="updateHighTipPercentage:" destination="xNv-5W-uRX" eventType="valueChanged" id="hwf-r8-qdj"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i4V-Hj-Mvf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZIq-iD-jub" firstAttribute="leading" secondItem="hyP-UK-VQN" secondAttribute="trailing" constant="44.329999999999998" id="08v-NC-ys5"/>
+                            <constraint firstItem="i4V-Hj-Mvf" firstAttribute="bottom" secondItem="Z2O-hC-MB0" secondAttribute="bottom" constant="372" id="4tV-jN-6aK"/>
+                            <constraint firstItem="hyP-UK-VQN" firstAttribute="leading" secondItem="vXp-in-ksK" secondAttribute="trailing" constant="67.329999999999998" id="FCv-9o-TcI"/>
+                            <constraint firstItem="Z2O-hC-MB0" firstAttribute="top" secondItem="hyP-UK-VQN" secondAttribute="bottom" constant="46" id="GWq-ZI-5vH"/>
+                            <constraint firstItem="vXp-in-ksK" firstAttribute="top" secondItem="tQY-7h-Wc6" secondAttribute="bottom" constant="40" id="IK9-9W-HVx"/>
+                            <constraint firstItem="vXp-in-ksK" firstAttribute="leading" secondItem="i4V-Hj-Mvf" secondAttribute="leading" constant="30" id="Mjv-TL-Xdd"/>
+                            <constraint firstItem="tQY-7h-Wc6" firstAttribute="top" secondItem="i4V-Hj-Mvf" secondAttribute="top" constant="31.670000000000002" id="N2B-ei-s8L"/>
+                            <constraint firstItem="hyP-UK-VQN" firstAttribute="top" secondItem="i4V-Hj-Mvf" secondAttribute="top" constant="92" id="NZY-FG-aUg"/>
+                            <constraint firstItem="Z2O-hC-MB0" firstAttribute="top" secondItem="ZIq-iD-jub" secondAttribute="bottom" constant="39" id="WTG-sg-0hm"/>
+                            <constraint firstItem="vXp-in-ksK" firstAttribute="top" secondItem="tQY-7h-Wc6" secondAttribute="bottom" constant="40" id="cHg-Na-QFC"/>
+                            <constraint firstItem="i4V-Hj-Mvf" firstAttribute="trailing" secondItem="tQY-7h-Wc6" secondAttribute="trailing" constant="260" id="cMD-2K-ycU"/>
+                            <constraint firstItem="Z2O-hC-MB0" firstAttribute="top" secondItem="vXp-in-ksK" secondAttribute="bottom" constant="46" id="cy0-Kg-E37"/>
+                            <constraint firstItem="ZIq-iD-jub" firstAttribute="top" secondItem="i4V-Hj-Mvf" secondAttribute="top" constant="84" id="h3G-69-7M2"/>
+                            <constraint firstItem="i4V-Hj-Mvf" firstAttribute="trailing" secondItem="Z2O-hC-MB0" secondAttribute="trailing" constant="52.329999999999998" id="iIb-Gj-s7n"/>
+                            <constraint firstItem="ZIq-iD-jub" firstAttribute="leading" secondItem="hyP-UK-VQN" secondAttribute="trailing" constant="44.329999999999998" id="kjU-DF-xrZ"/>
+                            <constraint firstItem="i4V-Hj-Mvf" firstAttribute="trailing" secondItem="ZIq-iD-jub" secondAttribute="trailing" constant="29" id="lce-4j-zSA"/>
+                            <constraint firstItem="hyP-UK-VQN" firstAttribute="leading" secondItem="vXp-in-ksK" secondAttribute="trailing" constant="67.329999999999998" id="mAk-Ab-WZb"/>
+                            <constraint firstItem="tQY-7h-Wc6" firstAttribute="leading" secondItem="i4V-Hj-Mvf" secondAttribute="leading" constant="30" id="uD8-qn-Rjx"/>
+                            <constraint firstItem="Z2O-hC-MB0" firstAttribute="leading" secondItem="i4V-Hj-Mvf" secondAttribute="leading" constant="30" id="zQx-Ew-824"/>
+                            <constraint firstItem="Z2O-hC-MB0" firstAttribute="top" secondItem="ZIq-iD-jub" secondAttribute="bottom" constant="39" id="za9-06-Wc8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i4I-su-gGo"/>
                     <connections>
+                        <outlet property="darkModeSwitch" destination="ZVt-b5-dca" id="iCY-Ch-ibW"/>
                         <outlet property="highTipLabel" destination="ewl-Jr-wOo" id="Ddh-2D-b2L"/>
                         <outlet property="highTipStepper" destination="Cx9-Tw-fly" id="ZRR-Ek-Dcd"/>
                         <outlet property="lowTipLabel" destination="oPY-cJ-lHx" id="Igh-Ij-v3H"/>

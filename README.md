@@ -32,7 +32,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-The main challenge I faced was familiarizing myself the Swift programming language and how Xcode functions in general. I initially had isssues with renaming UI class variable since they would become disconnected from the view controller after having their name changed in the code.  After a few hours of messing around on my own, I now feel comfortable working with the basics of Xcode.
+The main challenge I faced was familiarizing myself the Swift programming language and how Xcode functions in general. I initially had isssues with renaming UI class variable since they would become disconnected from the view controller after having their name changed in the code.  I also had some trouble setting up the dark mode feature at first, but after some reading I eventually figured it out. After working on this project and messing around on my own, I now feel comfortable working with the basics of Xcode.
 
 ## License
 

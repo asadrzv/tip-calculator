@@ -16,6 +16,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var lowTipStepper: UIStepper!
     @IBOutlet weak var mediumTipStepper: UIStepper!
     @IBOutlet weak var highTipStepper: UIStepper!
+    
+    @IBOutlet weak var darkModeSwitch: UISwitch!
         
     var defaults = UserDefaults.standard
     var tipPercentages = [15.0, 18.0, 20.0]
@@ -25,25 +27,18 @@ class SettingsViewController: UIViewController {
         
         // Sets title in navigation bar
         self.title = "Settings"
+        
+        // Sets dark/light mode
+        let darkModeOn = defaults.bool(forKey: "darkModeOn")
+        darkModeSwitch.isOn = darkModeOn
+        updateColorSettings(isDark: darkModeOn)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Get tip percentages from user defaults
-        let tipOnePercentage = defaults.double(forKey: "tipOnePercentage")
-        let tipTwoPercentage = defaults.double(forKey: "tipTwoPercentage")
-        let tipThreePercentage = defaults.double(forKey: "tipThreePercentage")
-        
-        // Update tip labels
-        lowTipLabel.text = String(format: "%.0f", tipOnePercentage) + "%"
-        mediumTipLabel.text = String(format: "%.0f", tipTwoPercentage) + "%"
-        highTipLabel.text = String(format: "%.0f", tipThreePercentage) + "%"
-        
-        // Update tip stepper values with those from user defaults
-        lowTipStepper.value = tipOnePercentage == 0 ? tipPercentages[0] : tipOnePercentage
-        mediumTipStepper.value = tipTwoPercentage == 0 ? tipPercentages[1] : tipTwoPercentage
-        highTipStepper.value = tipThreePercentage == 0 ? tipPercentages[2] : tipThreePercentage
+        // Update tip percentages and tip control from user defaults
+        updateTipPercentages()
     }
 
     /*
@@ -86,6 +81,47 @@ class SettingsViewController: UIViewController {
         // Save tip percentage to user defaults
         defaults.set(tipThreePercentage, forKey: "tipThreePercentage")
         defaults.synchronize()
+    }
+    
+    /*
+     Update tip percentages, labels and steppers from user defaults.
+     */
+    func updateTipPercentages() {
+        // Get tip percentages from user defaults
+        let tipOnePercentage = defaults.double(forKey: "tipOnePercentage")
+        let tipTwoPercentage = defaults.double(forKey: "tipTwoPercentage")
+        let tipThreePercentage = defaults.double(forKey: "tipThreePercentage")
+        
+        // Update tip labels
+        lowTipLabel.text = String(format: "%.0f", tipOnePercentage) + "%"
+        mediumTipLabel.text = String(format: "%.0f", tipTwoPercentage) + "%"
+        highTipLabel.text = String(format: "%.0f", tipThreePercentage) + "%"
+        
+        // Update tip stepper values with those from user defaults
+        lowTipStepper.value = tipOnePercentage == 0 ? tipPercentages[0] : tipOnePercentage
+        mediumTipStepper.value = tipTwoPercentage == 0 ? tipPercentages[1] : tipTwoPercentage
+        highTipStepper.value = tipThreePercentage == 0 ? tipPercentages[2] : tipThreePercentage
+    }
+    
+    /*
+     Updates dark mode and saves it to user defaults.
+     */
+    @IBAction func updateDarkMode(_ sender: Any) {
+        defaults.set(darkModeSwitch.isOn, forKey: "darkModeOn")
+        defaults.synchronize()
+        
+        updateColorSettings(isDark: darkModeSwitch.isOn)
+    }
+    
+    /*
+     Sets light/dark mode settings.
+     */
+    func updateColorSettings(isDark: Bool) {
+        if (isDark) {
+            view.overrideUserInterfaceStyle = .dark
+        } else {
+            view.overrideUserInterfaceStyle = .light
+        }
     }
     
 }
